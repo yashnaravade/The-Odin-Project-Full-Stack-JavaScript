@@ -44,14 +44,24 @@ async function login() {
 
 login();
 
-async function getUsers() {
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.log("E :", error);
-  }
-} 
+// async function getUsers() {
+//   try {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log("E :", error);
+//   }
+// } 
 
-getUsers();
+// getUsers();
+
+fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+  return response.json()
+})
+.then((data)=>{
+  console.log(data);
+})
+.catch((err)=>{
+console.log("Error has occured while getting data");
+})
