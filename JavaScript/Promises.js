@@ -16,3 +16,29 @@ new Promise(function (resolve, reject) {
 {
     console.log("We're done brazaa!!!");
 });
+
+// With Async/Await
+
+const PromiseTwo = new Promise(function (resolve, reject) {
+  setTimeout(() => {
+    let error = false;
+
+    if (!error) {
+      resolve({ username: "GoGo", pwd: "42069" });
+    } else {
+      reject("How dumb are you?");
+    }
+  }, 1000);
+});
+
+async function login() {
+  try {
+    const user = await PromiseTwo;
+    console.log(user);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+login();
+
