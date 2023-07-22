@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Project</title>
+  </head>
+  <body>
+    <h1>Heyyy</h1>
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+      // Move the 'speak' variable to the outer scope
+      let speak;
+
+      const SayIt = () => {
+        console.log("What is up Bitches!!!");
+      };
+
+      document.querySelector("#start").addEventListener("click", function () {
+        console.log("Started!");
+        // Set the interval and assign it to the 'speak' variable
+        speak = setInterval(SayIt, 1000);
+      });
+
+      document.querySelector("#stop").addEventListener("click", function () {
+        const ShutUp = () => {
+          clearInterval(speak);
+        };
+        ShutUp();
+
+        console.log("Stopped!");
+      });
+    </script>
+  </body>
+</html>
